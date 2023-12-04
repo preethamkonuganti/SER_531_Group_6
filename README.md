@@ -15,6 +15,8 @@
 ## Run Project
 To run the project, use the following commands based on your operating system:
 
+cd Crime_Data_Search
+
 ### Mac:
 python3 manage.py runserver
 
