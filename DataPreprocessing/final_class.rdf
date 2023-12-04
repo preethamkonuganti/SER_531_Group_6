@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project/"
+     xml:base="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasPerpetrator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasPerpetrator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Crime"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Perpetrator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasVictim -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasVictim">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Crime"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Victim"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#isOfSubType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#isOfSubType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Crime"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#CrimeSubType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#isOfType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#isOfType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Crime"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#CrimeType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#occuredAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#occuredAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Crime"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasBlockAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasBlockAddress">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasCaseID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasCaseID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Crime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasCrimeCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasCrimeCode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#CrimeType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Crime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasLattitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasLattitude">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasLongitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#hasLongitude">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#inDistrict -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#inDistrict">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#inWard -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#inWard">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#isArrested -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#isArrested">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Crime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#isInCity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#isInCity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#perpAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#perpAge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Perpetrator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#perpSex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#perpSex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Perpetrator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#victimAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#victimAge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Victim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#victimSex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#victimSex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Victim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Crime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Crime"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#CrimeSubType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#CrimeSubType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#CrimeType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#CrimeType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#CrimeType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Location"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Perpetrator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Perpetrator">
+        <!--rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Person"/-->
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Person -->
+
+    <!--owl:Class rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Person"/-->
+    
+
+
+    <!-- http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Victim -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Victim">
+        <!--rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#Person"/-->
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
