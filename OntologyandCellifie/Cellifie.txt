@@ -1,0 +1,64 @@
+{
+    "Collections": [
+        {
+            "sheetName": "merged",
+            "startColumn": "A",
+            "endColumn": "+",
+            "startRow": "2",
+            "endRow": "+",
+            "comment": "",
+            "rule": "Individual: @A*\nTypes: Crime\nFacts: hasCaseID @A*,\nhasDate @B*,\nisArrested @G*,\nhasPerpetrator @R*,\nhasVictim @Q*,\nisOfType @E*,\nisOfSubType @F*,\noccuredAt @S*",
+            "active": true
+        },
+        {
+            "sheetName": "merged",
+            "startColumn": "A",
+            "endColumn": "+",
+            "startRow": "2",
+            "endRow": "+",
+            "comment": "",
+            "rule": "Individual: @F*\nTypes: CrimeSubType",
+            "active": true
+        },
+        {
+            "sheetName": "merged",
+            "startColumn": "A",
+            "endColumn": "+",
+            "startRow": "2",
+            "endRow": "+",
+            "comment": "",
+            "rule": "Individual: @R*\nTypes: Perpetrator\nFacts: perpAge @O*,\nperpSex @P*",
+            "active": true
+        },
+        {
+            "sheetName": "merged",
+            "startColumn": "A",
+            "endColumn": "+",
+            "startRow": "2",
+            "endRow": "+",
+            "comment": "",
+            "rule": "Individual: @Q*\nTypes: Victim\nFacts: victimAge @M*,\nvictimSex @N*",
+            "active": true
+        },
+        {
+            "sheetName": "merged",
+            "startColumn": "A",
+            "endColumn": "+",
+            "startRow": "2",
+            "endRow": "+",
+            "comment": "",
+            "rule": "Individual: @S*\nTypes: Location\nFacts: hasLatitude @J*,\nhasBlockAddress @C*,\nhasLongitude @K*,\nisInCity @L*,\ninDistrict @H*,\ninWard @I*",
+            "active": true
+        },
+        {
+            "sheetName": "merged",
+            "startColumn": "A",
+            "endColumn": "+",
+            "startRow": "2",
+            "endRow": "+",
+            "comment": "",
+            "rule": "Individual: @E*\nTypes: CrimeType\nFacts: hasCrimeCode @D*",
+            "active": true
+        }
+    ]
+}
