@@ -1,0 +1,351 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Search</title>
+    <link rel="stylesheet" href="{% static 'search.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form id="filter-form" method="post" action="{% url 'results' %}">
+        <div class="container">
+            <h1>Crime Data Search Portal</h1>
+        </div>
+        {% csrf_token %}
+        <div class="filter-container">
+            <label for="filter1">Arrested:</label>
+            <select id="filter1" name="arrested" multiple="multiple">
+                <option value="true">True</option>
+                <option value="false">False</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+
+            <label for="filter2">City:</label>
+            <select id="filter2" name="city" multiple="multiple">
+                <option value="Chicago">Chicago</option>
+                <option value="BETHESDA">BETHESDA</option>
+                <option value="SILVER SPRING">SILVER SPRING</option>
+                <option value="GAITHERSBURG">GAITHERSBURG</option>
+                <option value="MONTGOMERY VILLAGE">MONTGOMERY VILLAGE</option>
+                <option value="ROCKVILLE">ROCKVILLE</option>
+                <option value="DERWOOD">DERWOOD</option>
+                <option value="DAMASCUS">DAMASCUS</option>
+                <option value="CHEVY CHASE">CHEVY CHASE</option>
+                <option value="CLARKSBURG">CLARKSBURG</option>
+                <option value="OLNEY">OLNEY</option>
+                <option value="BURTONSVILLE">BURTONSVILLE</option>
+                <option value="POTOMAC">POTOMAC</option>
+                <option value="TAKOMA PARK">TAKOMA PARK</option>
+                <option value="SANDY SPRING">SANDY SPRING</option>
+                <option value="KENSINGTON">KENSINGTON</option>
+                <option value="BOYDS">BOYDS</option>
+                <option value="POOLESVILLE">POOLESVILLE</option>
+                <option value="BROOKEVILLE">BROOKEVILLE</option>
+                <option value="MOUNT AIRY">MOUNT AIRY</option>
+                <option value="CABIN JOHN">CABIN JOHN</option>
+                <option value="ASHTON">ASHTON</option>
+                <option value="DICKERSON">DICKERSON</option>
+                <option value="LAUREL">LAUREL</option>
+                <option value="SPENCERVILLE">SPENCERVILLE</option>
+                <option value="GARRETT PARK">GARRETT PARK</option>
+                <option value="MT AIRY">MT AIRY</option>
+                <option value="BARNESVILLE">BARNESVILLE</option>
+                <option value="GLEN ECHO">GLEN ECHO</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="New York">New York</option>
+
+            </select>
+
+            <label for="crimeType">CrimeType:</label>
+            <select id="crimeType" name="crimeType" multiple="multiple">
+                <option value="THEFT">THEFT</option>
+                <option value="BATTERY">BATTERY</option>
+                <option value="ASSAULT">ASSAULT</option>
+                <option value="ROBBERY">ROBBERY</option>
+                <option value="OTHER OFFENSE">OTHER OFFENSE</option>
+                <option value="CRIMINAL DAMAGE">CRIMINAL DAMAGE</option>
+                <option value="MOTOR VEHICLE THEFT">MOTOR VEHICLE THEFT</option>
+                <option value="WEAPONS VIOLATION">WEAPONS VIOLATION</option>
+                <option value="BURGLARY">BURGLARY</option>
+                <option value="OFFENSE INVOLVING CHILDREN">OFFENSE INVOLVING CHILDREN</option>
+                <option value="DECEPTIVE PRACTICE">DECEPTIVE PRACTICE</option>
+                <option value="CRIMINAL TRESPASS">CRIMINAL TRESPASS</option>
+                <option value="NARCOTICS">NARCOTICS</option>
+                <option value="INTERFERENCE WITH PUBLIC OFFICER">INTERFERENCE WITH PUBLIC OFFICER</option>
+                <option value="LIQUOR LAW VIOLATION">LIQUOR LAW VIOLATION</option>
+                <option value="STALKING">STALKING</option>
+                <option value="PUBLIC PEACE VIOLATION">PUBLIC PEACE VIOLATION</option>
+                <option value="HOMICIDE">HOMICIDE</option>
+                <option value="CRIMINAL SEXUAL ASSAULT">CRIMINAL SEXUAL ASSAULT</option>
+                <option value="INTIMIDATION">INTIMIDATION</option>
+                <option value="SEX OFFENSE">SEX OFFENSE</option>
+                <option value="ARSON">ARSON</option>
+                <option value="GAMBLING">GAMBLING</option>
+                <option value="CONCEALED CARRY LICENSE VIOLATION">CONCEALED CARRY LICENSE VIOLATION</option>
+                <option value="All other Larceny">All other Larceny</option>
+                <option value="Driving Under the Influence">Driving Under the Influence</option>
+                <option value="Simple Assault">Simple Assault</option>
+                <option value="Shoplifting">Shoplifting</option>
+                <option value="Bad Checks">Bad Checks</option>
+                <option value="Theft From Motor Vehicle">Theft From Motor Vehicle</option>
+                <option value="Burglary/Breaking and Entering">Burglary/Breaking and Entering</option>
+                <option value="Theft of Motor Vehicle Parts or Accessories">Theft of Motor Vehicle Parts or Accessories
+                </option>
+                <option value="Identity Theft">Identity Theft</option>
+                <option value="Trespass of Real Property">Trespass of Real Property</option>
+                <option value="Drug Equipment Violations">Drug Equipment Violations</option>
+                <option value="Theft from Building">Theft from Building</option>
+                <option value="Weapon Law Violations">Weapon Law Violations</option>
+                <option value="Credit Card/Automatic Teller Machine Fraud">Credit Card/Automatic Teller Machine Fraud
+                </option>
+                <option value="Destruction/Damage/Vandalism of Property">Destruction/Damage/Vandalism of Property
+                </option>
+                <option value="Drug/Narcotic Violations">Drug/Narcotic Violations</option>
+                <option value="Aggravated Assault">Aggravated Assault</option>
+                <option value="Liquor Law Violations">Liquor Law Violations</option>
+                <option value="Disorderly Conduct">Disorderly Conduct</option>
+                <option value="False Pretenses/Swindle/Confidence Game">False Pretenses/Swindle/Confidence Game</option>
+                <option value="Forcible Sodomy">Forcible Sodomy</option>
+                <option value="Forcible Rape">Forcible Rape</option>
+                <option value="Forcible Fondling">Forcible Fondling</option>
+                <option value="Counterfeiting/Forgery">Counterfeiting/Forgery</option>
+                <option value="Sexual Assault With An Object">Sexual Assault With An Object</option>
+                <option value="Pornography/Obscene Material">Pornography/Obscene Material</option>
+                <option value="Embezzlement">Embezzlement</option>
+                <option value="Pocket/picking">Pocket/picking</option>
+                <option value="Wire Fraud">Wire Fraud</option>
+                <option value="Family Offenses, NonViolent">Family Offenses, NonViolent</option>
+                <option value="Impersonation">Impersonation</option>
+                <option value="Extortion/Blackmail">Extortion/Blackmail</option>
+                <option value="Murder and Nonnegligent Manslaughter">Murder and Nonnegligent Manslaughter</option>
+                <option value="Purse-snatching">Purse-snatching</option>
+                <option value="Prostitution">Prostitution</option>
+                <option value="Statuory Rape">Statuory Rape</option>
+                <option value="Animal Cruelty">Animal Cruelty</option>
+                <option value="Kidnapping/Abduction">Kidnapping/Abduction</option>
+                <option value="Justifiable Homicide">Justifiable Homicide</option>
+                <option value="Stolen Property Offenses">Stolen Property Offenses</option>
+                <option value="Purchasing Prostitution">Purchasing Prostitution</option>
+                <option value="Peeping Tom">Peeping Tom</option>
+                <option value="Welfare Fraud">Welfare Fraud</option>
+                <option value="From Coin/Operated Machine or Device">From Coin/Operated Machine or Device</option>
+                <option value="Drunkenness">Drunkenness</option>
+                <option value="BURGLARY FROM VEHICLE">BURGLARY FROM VEHICLE</option>
+                <option value="THEFT OF IDENTITY">THEFT OF IDENTITY</option>
+                <option value="THEFT FROM MOTOR VEHICLE - GRAND ($950.01 AND OVER)">THEFT FROM MOTOR VEHICLE - GRAND
+                    ($950.01 AND OVER)</option>
+                <option value="INTIMATE PARTNER - AGGRAVATED ASSAULT">INTIMATE PARTNER - AGGRAVATED ASSAULT</option>
+                <option value="SHOPLIFTING - PETTY THEFT ($950 & UNDER)">SHOPLIFTING - PETTY THEFT ($950 & UNDER)
+                </option>
+                <option value="THEFT-GRAND ($950.01 & OVER)EXCPT,GUNS,FOWL,LIVESTK,PROD">THEFT-GRAND ($950.01 &
+                    OVER)EXCPT,GUNS,FOWL,LIVESTK,PROD</option>
+                <option value="VANDALISM - FELONY ($400 & OVER, ALL CHURCH VANDALISMS)">VANDALISM - FELONY ($400 & OVER,
+                    ALL CHURCH VANDALISMS)</option>
+                <option value="VEHICLE - STOLEN">VEHICLE - STOLEN</option>
+                <option value="THEFT PLAIN - PETTY ($950 & UNDER)">THEFT PLAIN - PETTY ($950 & UNDER)</option>
+                <option value="ASSAULT WITH DEADLY WEAPON, AGGRAVATED ASSAULT">ASSAULT WITH DEADLY WEAPON, AGGRAVATED
+                    ASSAULT</option>
+                <option value="CHILD NEGLECT (SEE 300 W.I.C.)">CHILD NEGLECT (SEE 300 W.I.C.)</option>
+                <option value="BATTERY - SIMPLE ASSAULT">BATTERY - SIMPLE ASSAULT</option>
+                <option value="OTHER MISCELLANEOUS CRIME">OTHER MISCELLANEOUS CRIME</option>
+                <option value="TRESPASSING">TRESPASSING</option>
+                <option value="BUNCO, PETTY THEFT">BUNCO, PETTY THEFT</option>
+                <option value="PICKPOCKET">PICKPOCKET</option>
+                <option value="INTIMATE PARTNER - SIMPLE ASSAULT">INTIMATE PARTNER - SIMPLE ASSAULT</option>
+                <option value="THEFT, PERSON">THEFT, PERSON</option>
+                <option value="LETTERS, LEWD  -  TELEPHONE CALLS, LEWD">LETTERS, LEWD - TELEPHONE CALLS, LEWD</option>
+                <option value="EMBEZZLEMENT, GRAND THEFT ($950.01 & OVER)">EMBEZZLEMENT, GRAND THEFT ($950.01 & OVER)
+                </option>
+                <option value="VANDALISM - MISDEAMEANOR ($399 OR UNDER)">VANDALISM - MISDEAMEANOR ($399 OR UNDER)
+                </option>
+                <option value="BURGLARY, ATTEMPTED">BURGLARY, ATTEMPTED</option>
+                <option value="SEXUAL PENETRATION W/FOREIGN OBJECT">SEXUAL PENETRATION W/FOREIGN OBJECT</option>
+                <option value="VIOLATION OF RESTRAINING ORDER">VIOLATION OF RESTRAINING ORDER</option>
+                <option value="VIOLATION OF COURT ORDER">VIOLATION OF COURT ORDER</option>
+                <option value="CRIMINAL HOMICIDE">CRIMINAL HOMICIDE</option>
+                <option value="LEWD CONDUCT">LEWD CONDUCT</option>
+                <option value="EMBEZZLEMENT, PETTY THEFT ($950 & UNDER)">EMBEZZLEMENT, PETTY THEFT ($950 & UNDER)
+                </option>
+                <option value="BUNCO, GRAND THEFT">BUNCO, GRAND THEFT</option>
+                <option value="DOCUMENT FORGERY / STOLEN FELONY">DOCUMENT FORGERY / STOLEN FELONY</option>
+                <option value="THEFT FROM MOTOR VEHICLE - PETTY ($950 & UNDER)">THEFT FROM MOTOR VEHICLE - PETTY ($950 &
+                    UNDER)</option>
+                <option value="CHILD ANNOYING (17YRS & UNDER)">CHILD ANNOYING (17YRS & UNDER)</option>
+                <option value="DISCHARGE FIREARMS/SHOTS FIRED">DISCHARGE FIREARMS/SHOTS FIRED</option>
+                <option value="ATTEMPTED ROBBERY">ATTEMPTED ROBBERY</option>
+                <option value="CRIMINAL THREATS - NO WEAPON DISPLAYED">CRIMINAL THREATS - NO WEAPON DISPLAYED</option>
+                <option value="VEHICLE, STOLEN - OTHER (MOTORIZED SCOOTERS, BIKES, ETC)">VEHICLE, STOLEN - OTHER
+                    (MOTORIZED SCOOTERS, BIKES, ETC)</option>
+                <option value="CONTEMPT OF COURT">CONTEMPT OF COURT</option>
+                <option value="GRAND THEFT / INSURANCE FRAUD">GRAND THEFT / INSURANCE FRAUD</option>
+                <option value="INDECENT EXPOSURE">INDECENT EXPOSURE</option>
+                <option value="SHOPLIFTING-GRAND THEFT ($950.01 & OVER)">SHOPLIFTING-GRAND THEFT ($950.01 & OVER)
+                </option>
+                <option value="BRIBERY">BRIBERY</option>
+                <option value="VEHICLE - ATTEMPT STOLEN">VEHICLE - ATTEMPT STOLEN</option>
+                <option value="BATTERY WITH SEXUAL CONTACT">BATTERY WITH SEXUAL CONTACT</option>
+                <option value="OTHER ASSAULT">OTHER ASSAULT</option>
+                <option value="BATTERY POLICE (SIMPLE)">BATTERY POLICE (SIMPLE)</option>
+                <option value="SHOTS FIRED AT INHABITED DWELLING">SHOTS FIRED AT INHABITED DWELLING</option>
+                <option value="CHILD ABUSE (PHYSICAL) - SIMPLE ASSAULT">CHILD ABUSE (PHYSICAL) - SIMPLE ASSAULT</option>
+                <option value="BRANDISH WEAPON">BRANDISH WEAPON</option>
+                <option value="THEFT PLAIN - ATTEMPT">THEFT PLAIN - ATTEMPT</option>
+                <option value="EXTORTION">EXTORTION</option>
+                <option value="ASSAULT WITH DEADLY WEAPON ON POLICE OFFICER">ASSAULT WITH DEADLY WEAPON ON POLICE
+                    OFFICER</option>
+                <option value="THEFT, COIN MACHINE - GRAND ($950.01 & OVER)">THEFT, COIN MACHINE - GRAND ($950.01 &
+                    OVER)</option>
+                <option value="FAILURE TO YIELD">FAILURE TO YIELD</option>
+                <option value="BUNCO, ATTEMPT">BUNCO, ATTEMPT</option>
+                <option value="UNAUTHORIZED COMPUTER ACCESS">UNAUTHORIZED COMPUTER ACCESS</option>
+                <option value="SEX OFFENDER REGISTRANT OUT OF COMPLIANCE">SEX OFFENDER REGISTRANT OUT OF COMPLIANCE
+                </option>
+                <option value="ORAL COPULATION">ORAL COPULATION</option>
+                <option value="PURSE SNATCHING">PURSE SNATCHING</option>
+                <option value="BIKE - STOLEN">BIKE - STOLEN</option>
+                <option value="CRM AGNST CHLD (13 OR UNDER) (14-15 & SUSP 10 YRS OLDER)">CRM AGNST CHLD (13 OR UNDER)
+                    (14-15 & SUSP 10 YRS OLDER)</option>
+                <option value="BOMB SCARE">BOMB SCARE</option>
+                <option value="SEX,UNLAWFUL(INC MUTUAL CONSENT, PENETRATION W/ FRGN OBJ">SEX,UNLAWFUL(INC MUTUAL
+                    CONSENT, PENETRATION W/ FRGN OBJ)</option>
+                <option value="THREATENING PHONE CALLS/LETTERS">THREATENING PHONE CALLS/LETTERS</option>
+                <option value="KIDNAPPING">KIDNAPPING</option>
+                <option value="RAPE, FORCIBLE">RAPE, FORCIBLE</option>
+                <option value="RAPE, ATTEMPTED">RAPE, ATTEMPTED</option>
+                <option value="CHILD ABUSE (PHYSICAL) - AGGRAVATED ASSAULT">CHILD ABUSE (PHYSICAL) - AGGRAVATED ASSAULT
+                </option>
+                <option value="DEFRAUDING INNKEEPER/THEFT OF SERVICES, OVER $950.01">DEFRAUDING INNKEEPER/THEFT OF
+                    SERVICES, OVER $950.01</option>
+                <option value="SHOTS FIRED AT MOVING VEHICLE, TRAIN OR AIRCRAFT">SHOTS FIRED AT MOVING VEHICLE, TRAIN OR
+                    AIRCRAFT</option>
+                <option value="DRIVING WITHOUT OWNER CONSENT (DWOC)">DRIVING WITHOUT OWNER CONSENT (DWOC)</option>
+                <option value="CONTRIBUTING">CONTRIBUTING</option>
+                <option value="CRUELTY TO ANIMALS">CRUELTY TO ANIMALS</option>
+                <option value="HUMAN TRAFFICKING - COMMERCIAL SEX ACTS">HUMAN TRAFFICKING - COMMERCIAL SEX ACTS</option>
+                <option value="CHILD STEALING">CHILD STEALING</option>
+                <option value="BURGLARY FROM VEHICLE, ATTEMPTED">BURGLARY FROM VEHICLE, ATTEMPTED</option>
+                <option value="SODOMY/SEXUAL CONTACT B/W PENIS OF ONE PERS TO ANUS OTH">SODOMY/SEXUAL CONTACT B/W PENIS
+                    OF ONE PERS TO ANUS OTH</option>
+                <option value="CREDIT CARDS, FRAUD USE ($950 & UNDER">CREDIT CARDS, FRAUD USE ($950 & UNDER)</option>
+                <option value="THROWING OBJECT AT MOVING VEHICLE">THROWING OBJECT AT MOVING VEHICLE</option>
+                <option value="RECKLESS DRIVING">RECKLESS DRIVING</option>
+                <option value="FELONY ASSAULT">FELONY ASSAULT</option>
+                <option value="SEX CRIMES">SEX CRIMES</option>
+                <option value="PETIT LARCENY">PETIT LARCENY</option>
+                <option value="OFFENSES INVOLVING FRAUD">OFFENSES INVOLVING FRAUD</option>
+                <option value="ASSAULT 3 & RELATED OFFENSES">ASSAULT 3 & RELATED OFFENSES</option>
+                <option value="OTHER TRAFFIC INFRACTION">OTHER TRAFFIC INFRACTION</option>
+                <option value="VEHICLE AND TRAFFIC LAWS">VEHICLE AND TRAFFIC LAWS</option>
+                <option value="OFF. AGNST PUB ORD SENSBLTY &">OFF. AGNST PUB ORD SENSBLTY &</option>
+                <option value="GRAND LARCENY">GRAND LARCENY</option>
+                <option value="MISCELLANEOUS PENAL LAW">MISCELLANEOUS PENAL LAW</option>
+                <option value="FORGERY">FORGERY</option>
+                <option value="OTHER OFFENSES RELATED TO THEF">OTHER OFFENSES RELATED TO THEF</option>
+                <option value="OFFENSES AGAINST THE PERSON">OFFENSES AGAINST THE PERSON</option>
+                <option value="CRIMINAL MISCHIEF & RELATED OF">CRIMINAL MISCHIEF & RELATED OF</option>
+                <option value="DANGEROUS DRUGS">DANGEROUS DRUGS</option>
+                <option value="UNAUTHORIZED USE OF A VEHICLE">UNAUTHORIZED USE OF A VEHICLE</option>
+                <option value="FRAUDS">FRAUDS</option>
+                <option value="DANGEROUS WEAPONS">DANGEROUS WEAPONS</option>
+                <option value="GRAND LARCENY OF MOTOR VEHICLE">GRAND LARCENY OF MOTOR VEHICLE</option>
+                <option value="RAPE">RAPE</option>
+                <option value="OFFENSES AGAINST PUBLIC ADMINI">OFFENSES AGAINST PUBLIC ADMINI</option>
+                <option value="INTOXICATED/IMPAIRED DRIVING">INTOXICATED/IMPAIRED DRIVING</option>
+                <option value="POSSESSION OF STOLEN PROPERTY">POSSESSION OF STOLEN PROPERTY</option>
+                <option value="INTOXICATED & IMPAIRED DRIVING">INTOXICATED & IMPAIRED DRIVING</option>
+                <option value="NYS LAWS-UNCLASSIFIED FELONY">NYS LAWS-UNCLASSIFIED FELONY</option>
+                <option value="OTHER STATE LAWS">OTHER STATE LAWS</option>
+                <option value="MURDER & NON-NEGL. MANSLAUGHTE">MURDER & NON-NEGL. MANSLAUGHTE</option>
+                <option value="ALCOHOLIC BEVERAGE CONTROL LAW">ALCOHOLIC BEVERAGE CONTROL LAW</option>
+                <option value="CHILD ABANDONMENT/NON SUPPORT">CHILD ABANDONMENT/NON SUPPORT</option>
+                <option value="ENDAN WELFARE INCOMP">ENDAN WELFARE INCOMP</option>
+                <option value="PROSTITUTION & RELATED OFFENSES">PROSTITUTION & RELATED OFFENSES</option>
+                <option value="BURGLAR'S TOOLS">BURGLAR'S TOOLS</option>
+                <option value="CANNABIS RELATED OFFENSES">CANNABIS RELATED OFFENSES</option>
+                <option value="THEFT-FRAUD">THEFT-FRAUD</option>
+                <option value="HARRASSMENT 2">HARRASSMENT 2</option>
+                <option value="FRAUDULENT ACCOSTING">FRAUDULENT ACCOSTING</option>
+                <option value="ADMINISTRATIVE CODE">ADMINISTRATIVE CODE</option>
+                <option value="KIDNAPPING & RELATED OFFENSES">KIDNAPPING & RELATED OFFENSES</option>
+                <option value="OTHER STATE LAWS (NON PENAL LA">OTHER STATE LAWS (NON PENAL LA)</option>
+
+
+            </select>
+
+            <label for="perpetratorAge">Perpetrator Age:</label>
+            <select id="perpetratorAge" name="perpetratorAge" multiple="multiple">
+                <option value="">Not Selected</option>
+                <option value="18">Less than 18</option>
+                <option value="18-24">18-24</option>
+                <option value="25-44">25-44</option>
+                <option value="45-64">45-64</option>
+                <option value="65+">65+</option>
+                <option value="U">Unknown</option>
+            </select>
+
+            <label for="perpetratorSex">Perpetrator Sex:</label>
+            <select id="perpetratorSex" name="perpetratorSex" multiple="multiple">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="U">Unknown</option>
+            </select>
+
+            <label for="victimAge">Victim Age:</label>
+            <select id="victimAge" name="victimAge" multiple="multiple">
+                <option value="18">Less than 18</option>
+                <option value="18-25">18-25</option>
+                <option value="26-45">26-45</option>
+                <option value="46-65">46-65</option>
+                <option value="65+">65+</option>
+                <option value="U">Unknown</option>
+            </select>
+
+            <label for="victimSex">Victim Sex:</label>
+            <select id="victimSex" name="victimSex" multiple="multiple">
+                <option value="M">M</option>
+                <option value="F">F</option>
+                <option value="X">X</option>
+                <option value="H">H</option>
+                <option value="U">Unknown</option>
+            </select>
+
+            <label for="start-date">Start Date:</label>
+            <input type="date" name="start-date" id="start-date">
+
+            <label for="end-date">End Date:</label>
+            <input type="date" name="end-date" id="end-date">
+
+            <button type="submit" id="search-btn">Search</button>
+        </div>
+        <div id="results-table">
+        </div>
+        <script>
+            $(document).ready(function () {
+                $('#filter1, #filter2, #crimeType, #perpetratorAge, #perpetratorSex').select2({
+                    placeholder: "Select an option",
+                    allowClear: true
+                });
+
+                var perpetratorAgeDropdown = $('#perpetratorAge');
+                for (var i = 14; i <= 99; i++) {
+                    perpetratorAgeDropdown.append(new Option(i, i));
+                }
+
+                perpetratorAgeDropdown.select2({
+                    placeholder: "Select an age",
+                    allowClear: true
+                });
+
+            });
+        </script>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script src="{% static 'script.js' %}"></script>
+
+
+</html>

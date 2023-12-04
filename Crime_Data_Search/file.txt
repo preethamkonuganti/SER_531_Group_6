@@ -1,0 +1,29 @@
+
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX Project: <http://www.semanticweb.org/Team6/ontologies/2023/10/531_Project#>
+
+            SELECT ?id ?actualCrimeType ?arrested ?date ?page ?psex ?vage ?vsex ?block ?ward ?district ?city ?latitude ?longitude
+            WHERE {
+                ?crime rdf:type Project:Crime.
+                OPTIONAL {?crime Project:hasCaseID ?id}
+                OPTIONAL {?crime Project:isOfType ?crimeType.}
+                OPTIONAL {?crime Project:isArrested ?arrested.} 
+                OPTIONAL {?crime Project:hasPerpetrator ?perpetrator.}
+                OPTIONAL {?perpetrator Project:perpAge ?page.}
+                OPTIONAL {?perpetrator Project:perpSex ?psex.}
+                OPTIONAL {?crime Project:hasVictim ?victim.}
+                OPTIONAL {?victim Project:victimAge ?vage.}
+                OPTIONAL {?victim Project:victimSex ?vsex.}
+                OPTIONAL {?crime Project:occuredAt ?location.}
+                OPTIONAL {?location Project:hasBlockAddress ?block.}
+                OPTIONAL {?location Project:inDistrict ?district.}
+                OPTIONAL {?location Project:inWard ?ward.}
+                OPTIONAL {?location Project:isInCity ?city.}
+                OPTIONAL {?crime Project:hasDate ?date.}
+                OPTIONAL {?location Project:hasLatitude ?latitude.}
+                OPTIONAL {?location Project:hasLongitude ?longitude.}
+                BIND(strafter(str(?crimeType), "#") AS ?actualCrimeType)
+         FILTER(?arrested IN ("true")) FILTER(?city IN ("Chicago"))}

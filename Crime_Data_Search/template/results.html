@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{% static 'results.css' %}">
+</head>
+<body>
+    <div class="results-container">
+        {% if results %}
+            <h2>Search Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Actual Crime Type</th>
+                        <th>Arrested</th>
+                        <th>Date</th>
+                        <th>Perpetrator Age</th>
+                        <th>Perpetrator Sex</th>
+                        <th>Victim Age</th>
+                        <th>Victim Sex</th>
+                        <th>Block</th>
+                        <th>Ward</th>
+                        <th>District</th>
+                        <th>City</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
+                        <tr>
+                            <td>{{ result.id }}</td>
+                            <td>{{ result.actualCrimeType }}</td>
+                            <td>{{ result.arrested }}</td>
+                            <td>{{ result.date }}</td>
+                            <td>{{ result.page }}</td>
+                            <td>{{ result.psex }}</td>
+                            <td>{{ result.vage }}</td>
+                            <td>{{ result.vsex }}</td>
+                            <td>{{ result.block }}</td>
+                            <td>{{ result.ward }}</td>
+                            <td>{{ result.district }}</td>
+                            <td>{{ result.city }}</td>
+                            <td>{{ result.latitude }}</td>
+                            <td>{{ result.longitude }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Hooray!!, There are no crimes found for the selected search criteria</p>
+        {% endif %}
+    </div>
+</body>
+</html>
