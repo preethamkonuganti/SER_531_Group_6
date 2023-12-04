@@ -21,7 +21,7 @@ python3 manage.py runserver
 ### Windows:
 python manage.py runserver
 
-The code is already deployed on the GCP Server. To access it use this [Link]{http://34.94.107.22:8000}
+The code is already deployed on the GCP Server. To access it use this [Link]{34.94.107.22:8000}
 
 After successfully running it you can access the Home Page.
 Fill in the search criteria and select "Search".
