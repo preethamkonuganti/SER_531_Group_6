@@ -19,4 +19,5 @@ python3 manage.py runserver
 ### Windows:
 python manage.py runserver
 
-After sucessfully running it you can access the Landing page in ""
+After sucessfully running it you can access the Landing page in 
+Youtube Link: 
